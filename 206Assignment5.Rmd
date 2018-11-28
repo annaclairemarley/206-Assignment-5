@@ -87,7 +87,19 @@ phd_shifts
 3. Male and female salaries for starting postdoctoral and other employment positions (2015). Compare median salaries for male and female doctorate recipients in 2015. Answer these two questions: Does median salary differ significantly between male and female starting postdoc positions? Does median salary differ significantly between male and female PhD recipients in non-postdoc employment positions?
 
 ```{r}
+# Comparing medians use Mann-Whitney U.
 
+################## Compare median salaries for post-doc positions ################
+
+#First test for equal variance
+
+# Mann-Whitney U
+
+# Cliffs Delta (effect size)
+
+# Actual difference in medians 
+
+# sample size and sd 
 ```
 
 

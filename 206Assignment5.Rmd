@@ -176,7 +176,7 @@ emp_male_median - emp_female_median
 # median female = 71750
 # difference male - female = 3417
 
-################### compare median salaries for non-postdoc positions ################
+################### compare median salaries for non-postdoc positions ###############
 
 # Explotory histogram - male median salaries 
 # bins

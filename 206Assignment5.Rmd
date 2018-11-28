@@ -100,6 +100,9 @@ phd_x2test
 
 #we reject the null hypothesis beacuse the p-value is < .001. The field in which women receive their doctoral degrees differs significantly between 1985, 2000 and 2015. There is a significant association between year and number of docotoral degrees awarded to women in each field. 
 
+
+#next: make a table 
+
 ```
 
 
@@ -110,141 +113,15 @@ phd_x2test
 
 ################## Compare median salaries for post-doc positions ################
 
-# Explotory histogram - male median salaries 
-# bins
-k <- 2*((NROW(na.omit(median$`Emp M`)))^(1/3))
-
-empmale_hist <- ggplot(median, aes(x = `Emp M`)) +
-  geom_histogram(bins = k) +
-  theme_classic() +
-  scale_x_continuous(expand = c(0,0)) +
-  scale_y_continuous (expand = c(0,0))
-empmale_hist
-
-# noraml - heavily concentrated in the middle bins, very few above or below 
-
-# Exploratory QQ - male median salary 
-
-empmale_qq <- ggplot(median, aes(sample = `Emp M`)) +
-  geom_qq() 
-empmale_qq
-
-# appears normal
-
-# histogram - female median salary
-#bins
-k <- 2*((NROW(na.omit(median$`Emp F`)))^(1/3))
-
-empfemale_hist <- ggplot(median, aes(x = `Emp F`)) +
-  geom_histogram(bins = k) +
-  theme_classic() +
-  scale_x_continuous(expand = c(0,0)) +
-  scale_y_continuous (expand = c(0,0))
-empfemale_hist
-
-# normal - also heavily concentrated in the center bins - very few observations above and below 
-
-# Exploratory QQ - female median salary 
-
-empfemale_qq <- ggplot(median, aes(sample = `Emp F`)) +
-  geom_qq() 
-empfemale_qq
-
-# appears relatively normal
+#First test for equal variance
 
 # Mann-Whitney U
 
-# HO: Ranks are equal (medians are equal)
-# HA: Ranks are NOT equal
-
-emp_mwu <- wilcox.test(median$`Emp M`, median$`Emp F`)
-emp_mwu
-# W = 136.5 p-value = 0.3289 (NOT significant)
-
 # Cliffs Delta (effect size)
-
-emp_cliff <- cliff.delta(median$`Emp M`, median$`Emp F`)
-emp_cliff
-# Cliff delta = 0.213 (small)
 
 # Actual difference in medians 
 
-emp_male_median <- median(median$`Emp M`)
-emp_female_median <- median(median$`Emp F`)
-emp_male_median - emp_female_median
-# median male = 75167
-# median female = 71750
-# difference male - female = 3417
-
-################### compare median salaries for non-postdoc positions ################
-
-# Explotory histogram - male median salaries 
-# bins
-k <- 2*((NROW(na.omit(median$`PS M`)))^(1/3))
-
-psmale_hist <- ggplot(median, aes(x = `PS M`)) +
-  geom_histogram(bins = k) +
-  theme_classic() +
-  scale_x_continuous(expand = c(0,0)) +
-  scale_y_continuous (expand = c(0,0))
-psmale_hist
-
-# normal - more evenly spread 
-
-# Exploratory QQ - male median salary 
-
-psmale_qq <- ggplot(median, aes(sample = `PS M`)) +
-  geom_qq() 
-psmale_qq
-
-# overall normal, a few more abnormal points between theoretical 0 and 1 
-
-# histogram - female median salary
-#bins
-k <- 2*((NROW(na.omit(median$`PS F`)))^(1/3))
-
-psfemale_hist <- ggplot(median, aes(x = `PS F`)) +
-  geom_histogram(bins = k) +
-  theme_classic() +
-  scale_x_continuous(expand = c(0,0)) +
-  scale_y_continuous (expand = c(0,0))
-psfemale_hist
-
-# relatively normal  
-
-# Exploratory QQ - female median salary 
-
-psfemale_qq <- ggplot(median, aes(sample = `PS F`)) +
-  geom_qq() 
-psfemale_qq
-
-# overall relatively normal
-
-# Mann-Whitney U
-
-# HO: Ranks are equal (medians are equal)
-# HA: Ranks are NOT equal
-
-ps_mwu <- wilcox.test(median$`PS M`, median$`PS F`)
-ps_mwu
-
-# W = 117 p-value = 0.8671 (NOT significant)
-
-# Cliffs Delta (effect size)
-
-ps_cliff <- cliff.delta(median$`PS M`, median$`PS F`)
-ps_cliff
-# Cliff delta = 0.04 (negligible)
-
-# Actual difference in medians 
-
-ps_male_median <- median(median$`PS M`)
-ps_female_median <- median(median$`PS F`)
-ps_male_median - ps_female_median
-# median male = 48000
-# median female = 45000
-# difference male - female = 3000
-
+# sample size and sd 
 ```
 
 

@@ -15,16 +15,18 @@ faculty <- read_csv("Faculty_salary_data_cleaned.csv")
 grad <- read_csv("Grad_enrollment_cleaned.csv")
 grad2 <- read_csv("Grad_enroll_clean2.csv")
 median <- read_csv("Median_salary_cleaned.csv")
+phd_fields <- read_csv("F_PhD_Fields.csv")
+phd_tidy <- read_csv("PhD_tidy.csv")
 
 ```
 
 
 1. Male and female graduate enrollment (1967 - 2015). Compare trends in total graduate enrollment for males and females (including full-time/part-time and private/public universities) in the United States from 1967 - 2015. Describe your results statistically, graphically and in text. 
 
-**reminder: cannot split public_all/private_All by gender does not equate to gender column***
+**reminder: cannot split public_all/private_All by gender does not equate to gender column**
 
 ```{r}
-#exploratory scatterplot 
+# Exploratory line graphs
 
 # full time enrollment men vs women
 full_time <- grad2 %>% 
@@ -61,6 +63,23 @@ part_time
 
 ```{r}
 
+# exploratory 
+
+phd_shifts <- phd_tidy %>% 
+  filter(Field == "Physical science" | Field == "Engineering" | Field == "Education" | Field == "Humanities", Sex    == "F") %>% 
+  ggplot(aes(x = Year, y = Number)) +
+  geom_col(aes(fill = Field), position = "dodge") +
+  scale_x_continuous(expand=c(0,0), breaks = seq(1985,2015, by=15)) +
+  scale_y_continuous(expand=c(0,0)) +
+  theme_classic() +
+  labs(
+    x = "Year",
+    y = "Female PhDs Awarded"
+  )
+
+phd_shifts
+
+
 
 
 ```
@@ -69,7 +88,19 @@ part_time
 3. Male and female salaries for starting postdoctoral and other employment positions (2015). Compare median salaries for male and female doctorate recipients in 2015. Answer these two questions: Does median salary differ significantly between male and female starting postdoc positions? Does median salary differ significantly between male and female PhD recipients in non-postdoc employment positions?
 
 ```{r}
+# Comparing medians use Mann-Whitney U.
 
+################## Compare median salaries for post-doc positions ################
+
+#First test for equal variance
+
+# Mann-Whitney U
+
+# Cliffs Delta (effect size)
+
+# Actual difference in medians 
+
+# sample size and sd 
 ```
 
 

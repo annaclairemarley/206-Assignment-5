@@ -1,0 +1,49 @@
+Field,Sex,Year,Number
+Life Sciences,M,1985,"3,946"
+Life Sciences,F,1985,"1,876"
+Physical science,M,1985,"2,922"
+Physical science,F,1985,569
+Math,M,1985,859
+Math,F,1985,139
+Psychology,M,1985,"3,517"
+Psychology,F,1985,"2,510"
+Engineering,M,1985,"2,968"
+Engineering,F,1985,198
+Education,M,1985,"3,242"
+Education,F,1985,"3,491"
+Humanities,M,1985,"2,014"
+Humanities,F,1985,"1,392"
+Other,M,1985,"1,084"
+Other,F,1985,568
+Life Sciences,M,2000,"4,568"
+Life Sciences,F,2000,"4,043"
+Physical science,M,2000,"3,041"
+Physical science,F,2000,"1,022"
+Math,M,2000,"1,507"
+Math,F,2000,400
+Psychology,M,2000,"3,370"
+Psychology,F,2000,"4,073"
+Engineering,M,2000,"4,459"
+Engineering,F,2000,838
+Education,M,2000,"2,260"
+Education,F,2000,"4,179"
+Humanities,M,2000,"2,786"
+Humanities,F,2000,"2,672"
+Other,M,2000,"1,174"
+Other,F,2000,904
+Life Sciences,M,2015,"5,578"
+Life Sciences,F,2015,"6,941"
+Physical science,M,2015,"3,935"
+Physical science,F,2015,"1,988"
+Math,M,2015,"2,880"
+Math,F,2015,943
+Psychology,M,2015,"3,762"
+Psychology,F,2015,"5,332"
+Engineering,M,2015,"7,596"
+Engineering,F,2015,"2,301"
+Education,M,2015,"1,614"
+Education,F,2015,"3,502"
+Humanities,M,2015,"2,767"
+Humanities,F,2015,"2,832"
+Other,M,2015,"1,464"
+Other,F,2015,"1,564"

@@ -17,6 +17,7 @@ grad2 <- read_csv("Grad_enroll_clean2.csv")
 median <- read_csv("Median_salary_cleaned.csv")
 phd_fields <- read_csv("F_PhD_Fields.csv")
 phd_tidy <- read_csv("PhD_tidy.csv")
+phd_chi <-read_csv("Field_chisquared.csv")
 
 ```
 
@@ -84,6 +85,20 @@ phd_shifts
 #Ho - there is no association between year and number of women in each field 
 #Ha - there IS an association between year and number of women in each field 
 
+
+phd_chi2 <- phd_chi %>% 
+  select(-Year) %>%
+  filter(physical != "NA")
+
+row.names(phd_chi2) <- c("1985","2000","2015")
+
+#Perform chi-square 
+
+phd_x2test <- chisq.test(phd_chi2) 
+
+phd_x2test
+
+#we reject the null hypothesis beacuse the p-value is < .001. The field in which women receive their doctoral degrees differs significantly between 1985, 2000 and 2015. There is a significant association between year and number of docotoral degrees awarded to women in each field. 
 
 ```
 

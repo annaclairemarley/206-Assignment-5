@@ -1,4 +1,4 @@
-Faculty Rank,Discipline ,Yrs Since PhD,Yrs Faculty Service,Sex,Salary 
+Rank,Discipline ,Yrs_Since_PhD,Yrs_Faculty_Service,Sex,Salary 
 Prof,B,19,18,Male,139750
 Prof,B,20,16,Male,173200
 AsstProf,B,4,3,Male,79750

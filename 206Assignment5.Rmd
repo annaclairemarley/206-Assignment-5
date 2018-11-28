@@ -63,7 +63,7 @@ part_time
 
 ```{r}
 
-# exploratory 
+# exploratory column graph
 
 phd_shifts <- phd_tidy %>% 
   filter(Field == "Physical science" | Field == "Engineering" | Field == "Education" | Field == "Humanities", Sex    == "F") %>% 
@@ -79,7 +79,10 @@ phd_shifts <- phd_tidy %>%
 
 phd_shifts
 
+#chi squared test on female "is there a sigificant difference in females who chose a particular field in 1985, 2000 and 2015?"
 
+#Ho - there is no association between year and number of women in each field 
+#Ha - there IS an association between year and number of women in each field 
 
 
 ```
@@ -107,6 +110,8 @@ phd_shifts
 4. Exploring academic salaries for professors in U.S. colleges. Explore relationships between variables in the ‘Faculty salary data (2008 - 2009 survey)’ dataset. Develop a model describing faculty salary based on data for faculty sex, rank, years in current position, field, and number of years since doctoral degree was earned. You should make decisions regarding which variables should remain in your final model. Describe the results qualitatively and quantitatively (i.e., don’t just report the statistical results of the model – make sure you describe interesting findings in text). You can also discuss any concerns that you have with the model(s) you present, if any.
 
 ```{r}
+
+
 
 ```
 

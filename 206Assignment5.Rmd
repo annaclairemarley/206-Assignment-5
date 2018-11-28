@@ -95,9 +95,51 @@ phd_shifts
 
 ################## Compare median salaries for post-doc positions ################
 
-#First test for equal variance
+# Explotory histogram - male median salaries 
+# bins
+k <- 2*((NROW(na.omit(median$`Emp M`)))^(1/3))
+
+empmale_hist <- ggplot(median, aes(x = `Emp M`)) +
+  geom_histogram(bins = k) +
+  theme_classic() +
+  scale_x_continuous(expand = c(0,0)) +
+  scale_y_continuous (expand = c(0,0))
+empmale_hist
+
+# Heavily concentrated in the middle bins - very few above or below
+
+# Exploratory QQ - male median salary 
+
+empmale_qq <- ggplot(median, aes(sample = `Emp M`)) +
+  geom_qq() 
+empmale_qq
+
+# appears normal
+
+# histogram - female median salary
+#bins
+k <- 2*((NROW(na.omit(median$`Emp F`)))^(1/3))
+
+empfemale_hist <- ggplot(median, aes(x = `Emp F`)) +
+  geom_histogram(bins = k) +
+  theme_classic() +
+  scale_x_continuous(expand = c(0,0)) +
+  scale_y_continuous (expand = c(0,0))
+empfemale_hist
+
+# also heavily concentrated in the center bins - very few observations above and below 
+
+# Exploratory QQ - female median salary 
+
+empfemale_qq <- ggplot(median, aes(sample = `Emp F`)) +
+  geom_qq() 
+empfemale_qq
+
+# appears relatively normal
 
 # Mann-Whitney U
+
+
 
 # Cliffs Delta (effect size)
 

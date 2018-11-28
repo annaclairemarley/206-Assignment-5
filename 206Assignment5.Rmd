@@ -15,16 +15,18 @@ faculty <- read_csv("Faculty_salary_data_cleaned.csv")
 grad <- read_csv("Grad_enrollment_cleaned.csv")
 grad2 <- read_csv("Grad_enroll_clean2.csv")
 median <- read_csv("Median_salary_cleaned.csv")
+phd_fields <- read_csv("F_PhD_Fields.csv")
+phd_tidy <- read_csv("PhD_tidy.csv")
 
 ```
 
 
 1. Male and female graduate enrollment (1967 - 2015). Compare trends in total graduate enrollment for males and females (including full-time/part-time and private/public universities) in the United States from 1967 - 2015. Describe your results statistically, graphically and in text. 
 
-**reminder: cannot split public_all/private_All by gender does not equate to gender column***
+**reminder: cannot split public_all/private_All by gender does not equate to gender column**
 
 ```{r}
-#exploratory scatterplot 
+# Exploratory line graphs
 
 # full time enrollment men vs women
 full_time <- grad2 %>% 
@@ -60,6 +62,9 @@ part_time
 2. Shifts in female PhD recipients by field (1985, 2000, and 2015). Describe if and how there was a shift in PhDs awarded to females in four fields (Physical and Earth Sciences, Engineering, Education, and Humanities & Arts) in 1985, 2000, and 2015. Describe your results statistically, in a graph or table, and in text. Note: There are several ways that you can interpret this question. You are invited to decide which you think is/are most interesting. Just be really clear about what you are asking/answering in your report.
 
 ```{r}
+
+# exploratory column graph
+
 
 
 ```

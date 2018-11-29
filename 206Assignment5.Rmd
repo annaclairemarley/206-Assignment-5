@@ -132,7 +132,7 @@ par(mfrow = c(2,2))
   plot(enroll_lm2)
   
 # check model fit
-  summary(enroll_lm1)
+  summary(enroll_lm1) 
  # overall model fit p < 0.001
   
 

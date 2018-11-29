@@ -8,6 +8,7 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
+library(car)
 
 
 
@@ -29,6 +30,22 @@ phd_chi <-read_csv("Field_chisquared.csv")
 ```{r}
 # Exploratory line graphs
 
+###########################This is what the assingment asks for##############################################
+# total enrollment males vs females
+total_enrol <- grad2 %>% 
+  ggplot(aes(x = Year, y = Total)) +
+  geom_line(aes(color = Gender)) +
+  theme_classic() +
+  labs(
+    x = "Year",
+    y = "Enrollment in Post-Secondary Institutions"
+  ) +
+  scale_x_continuous(expand=c(0,0))
+
+total_enrol
+##################################################################################
+
+# Below are extra graphs if we want
 # full time enrollment men vs women
 full_time <- grad2 %>% 
   ggplot(aes(x = Year, y = Full_time)) +
@@ -58,6 +75,42 @@ part_time
 
 
 ```
+
+Continuation of 1: Statistical tests
+Need to compare enrollment over time of men vs women
+
+```{r}
+# Normality tests
+
+Ftotal_hist <- grad %>% 
+  ggplot(aes(x = Total_F)) +
+  geom_histogram()
+
+Ftotal_hist
+ 
+Ftotal_qq <- grad %>% 
+  ggplot(aes(sample = Total_F)) +
+  geom_qq()
+
+Ftotal_qq
+   
+  
+Mtotal_hist <- grad %>% 
+  ggplot(aes(x = Total_M)) +
+  geom_histogram()
+
+Mtotal_hist
+ 
+Mtotal_qq <- grad %>% 
+  ggplot(aes(sample = Total_M)) +
+  geom_qq()
+
+Mtotal_qq
+
+```
+
+
+
 
 
 2. Shifts in female PhD recipients by field (1985, 2000, and 2015). Describe if and how there was a shift in PhDs awarded to females in four fields (Physical and Earth Sciences, Engineering, Education, and Humanities & Arts) in 1985, 2000, and 2015. Describe your results statistically, in a graph or table, and in text. Note: There are several ways that you can interpret this question. You are invited to decide which you think is/are most interesting. Just be really clear about what you are asking/answering in your report.
@@ -204,7 +257,41 @@ ps_male_median - ps_female_median
 
 ```{r}
 
+# tests on the data
 
+# correlation years since phd and years faculty service
+yrs_plot <- faculty %>% 
+  ggplot(aes(x = Yrs_Since_PhD, y = Yrs_Faculty_Service)) +
+  geom_point(aes(color = Sex), alpha = 0.5)
+
+yrs_plot
+
+#correlation years faculty service vs salary
+
+service_plot <- faculty %>% 
+  ggplot(aes(x = Yrs_Faculty_Service, y = Salary)) +
+  geom_point(aes(color = Sex), alpha = 0.5)
+
+service_plot
+
+
+# change reference levles
+
+# Rank: reference level = profesor
+faculty$Rank <- factor(faculty$Rank)
+faculty$Rank <- fct_relevel(faculty$Rank, "Prof")
+
+# aggregate model 
+salary_lm1 <- lm(Salary ~ Rank + Yrs_Since_PhD + Yrs_Faculty_Service + Sex + Discipline, data = faculty)
+
+vif(salary_lm1)
+# yrs since phd = 7
+# yrs faculty service = 5.9
+# everything else less than 4
+
+# summarized model
+
+salary_lm2 <- lm(Salary ~ Rank + Yrs_Faculty_Service + Sex + Discipline, data = faculty)
 
 ```
 

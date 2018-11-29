@@ -351,14 +351,27 @@ salary_lm3 <- lm(Salary ~ Rank + Yrs_Since_PhD + Sex + Discipline, data = facult
 
 ###### graphs for testing for interaction between ranks and years of service/ ranks and years since phd
 
-service_rank <- ggplot(faculty, aes(x = Yrs_Faculty_Service, y = Salary)) +
-  geom_point(aes(color = Rank))
-
+service_rank <- ggplot(faculty, aes(x = Yrs_Faculty_Service, y = Salary, color = Rank)) +
+  geom_point() +
+  geom_smooth(aes(Yrs_Faculty_Service, Salary, color = Rank), method = lm, se = FALSE)
 service_rank
 
-since_rank <- ggplot(faculty, aes(x = Yrs_Since_PhD, y = Salary)) +
-  geom_point(aes(color = Rank))
+since_rank <- ggplot(faculty, aes(x = Yrs_Since_PhD, y = Salary, color = Rank)) +
+  geom_point() + 
+  geom_smooth(aes(Yrs_Since_PhD, Salary, color = Rank), method = lm, se = FALSE)
 since_rank 
+
+#### graph to test interaction between years of service and discipline and years since phd and discipline 
+
+service_discipline <- ggplot(faculty, aes(x = Yrs_Faculty_Service, y = Salary, color = Discipline)) +
+  geom_point() +
+  geom_smooth(aes(Yrs_Faculty_Service, Salary, color = Discipline), method = lm, se = FALSE)
+service_discipline 
+
+since_discipline <- ggplot(faculty, aes(x = Yrs_Since_PhD, y = Salary, color = Discipline)) +
+  geom_point() +
+  geom_smooth(aes(Yrs_Since_PhD, Salary, color = Discipline), method = lm, se = FALSE)
+since_discipline
 
 # Testing an interaction term for years since phd and rank
 

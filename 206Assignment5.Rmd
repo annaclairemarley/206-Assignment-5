@@ -154,7 +154,15 @@ phd_x2test
 #we reject the null hypothesis beacuse the p-value is < .001. The field in which women receive their doctoral degrees differs significantly between 1985, 2000 and 2015. There is a significant association between year and number of docotoral degrees awarded to women in each field. 
 
 
-#next: make a table 
+#next: make a table
+
+phdfield_prop <- prop.table(as.matrix(phd_chi2), 1) %>% 
+  round(2)
+
+phdfield_prop
+
+
+
 
 ```
 

@@ -82,6 +82,7 @@ Need to compare enrollment over time of men vs women
 ```{r}
 # Normality tests
 
+########## idk if necessary ###################################
 Ftotal_hist <- grad %>% 
   ggplot(aes(x = Total_F)) +
   geom_histogram()
@@ -107,8 +108,61 @@ Mtotal_qq <- grad %>%
 
 Mtotal_qq
 
+###################################################
+
 ```
 
+```{r}
+
+####### Linear Regression #####################
+
+enroll_lm1 <- lm(Total_M ~ Year, data = grad)
+# Male Salary = -17112153 + 9069(Year)
+
+enroll_lm2 <- lm(Total_F ~ Year, data = grad)
+# Female salary = -58955502 + 30126 
+
+
+# check the model diagnostics
+
+par(mfrow = c(2,2))
+  plot(enroll_lm1)
+  
+par(mfrow = c(2,2))
+  plot(enroll_lm2)
+  
+# check model fit
+  summary(enroll_lm1)
+ # overall model fit p < 0.001
+  
+
+  
+####### Regression graphs ######
+  
+male_enroll_graph <- ggplot(grad, aes(x = Year, y = Total_M)) + 
+  geom_point() +
+  geom_smooth(method = lm, se = TRUE, size = 0.5, color = "gray20") + theme_bw() +
+  scale_x_continuous(expand = c(0,0), limits = c(1967, 2015)) +
+  labs(x = "Year", y = "Male Enrollment")
+male_enroll_graph
+
+female_enroll_graph <- ggplot(grad, aes(x = Year, y = Total_F)) + 
+  geom_point() +
+  geom_smooth(method = lm, se = TRUE, size = 0.5, color = "gray20") + theme_bw() +
+  scale_x_continuous(expand = c(0,0), limits = c(1967, 2015)) +
+  labs(x = "Year", y = "Female Enrollment")
+female_enroll_graph
+
+#### Both male and female enrollment linear regressions  ############
+all_enroll_graph <- ggplot(grad, aes(x = Year, y = Total_M)) + 
+  geom_point() +
+  geom_smooth(method = lm, se = TRUE, size = 0.5, color = "gray20") + theme_bw() +
+  scale_x_continuous(expand = c(0,0), limits = c(1967, 2015)) +
+  geom_point(data = grad, aes(x =  Year, y = Total_F)) +
+  geom_smooth(data = grad, aes(x =  Year, y = Total_F), method = lm, se = TRUE, size = 0.5, color = "gray20") +    theme_bw() +
+  labs(x = "Year", y = "Enrollment")
+all_enroll_graph
+```
 
 
 

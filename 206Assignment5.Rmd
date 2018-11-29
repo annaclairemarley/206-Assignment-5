@@ -250,6 +250,35 @@ ps_male_median - ps_female_median
 # median female = 45000
 # difference male - female = 3000
 
+############################# Box & Whisker plot Emp #################################
+emp_median <- median_box %>% 
+  filter(type == "emp")
+
+empmedian_box <- ggplot(emp_median, aes(x = sex, y = salary)) +
+  geom_boxplot()+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.background = element_blank(), axis.line = element_line(colour = "black"),text = element_text(family = "Arial"))+
+  xlab("Sex")+
+  ylab("Median Salary") +
+  ggtitle("Median Salary by Sex for Employment") +
+  theme(plot.title = element_text(hjust = 0.5)) 
+  
+empmedian_box
+
+########################### Box & Whisker plot Postdoc ###############################
+ps_median <- median_box %>% 
+  filter(type == "ps")
+
+psmedian_box <- ggplot(ps_median, aes(x = sex, y = salary)) +
+  geom_boxplot()+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.background = element_blank(), axis.line = element_line(colour = "black"),text = element_text(family = "Arial"))+
+  xlab("Sex")+
+  ylab("Median Salary") +
+  ggtitle("Median Salary by Sex for Postdoctoral Employment") +
+  theme(plot.title = element_text(hjust = 0.5)) 
+  
+psmedian_box
 ```
 
 

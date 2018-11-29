@@ -174,11 +174,14 @@ phdfield_prop
 
 ################## Compare median salaries for post-doc positions ################
 
-#First test for equal variance
-
 # Mann-Whitney U
+emp_mwu <- wilcox.test(median$`Emp M`, median$`Emp F`)
+emp_mwu
 
 # Cliffs Delta (effect size)
+emp_cliff <- cliff.delta(median$`Emp M`, median$`Emp F`)
+emp_cliff
+# Cliff delta = 0.2133 (small)
 
 # Actual difference in medians 
 

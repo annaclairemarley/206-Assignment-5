@@ -274,6 +274,13 @@ service_plot <- faculty %>%
 
 service_plot
 
+#correlation years faculty service v salary 
+
+salary_yrs_plot <- faculty %>% 
+  ggplot(aes(x = Yrs_Since_PhD, y = Salary)) +
+  geom_point(aes(color = Sex), alpha = 0.5)
+
+salary_yrs_plot
 
 # change reference levles
 
@@ -293,6 +300,16 @@ vif(salary_lm1)
 
 salary_lm2 <- lm(Salary ~ Rank + Yrs_Faculty_Service + Sex + Discipline, data = faculty)
 
+#vif test on lm2
+
+vif(salary_lm2)
+
+#AIC on both models 
+
+AIC(salary_lm1)
+AIC(salary_lm2)
+
+#lm1 has a lower AIC, but our judegement tells us lm2 is probably better 
 ```
 
 

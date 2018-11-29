@@ -344,6 +344,15 @@ AIC(salary_lm1)
 AIC(salary_lm2)
 
 #lm1 has a lower AIC, but our judegement tells us lm2 is probably better 
+
+service_rank <- ggplot(faculty, aes(x = Yrs_Faculty_Service, y = Salary)) +
+  geom_point(aes(color = Rank))
+
+service_rank
+
+since_rank <- ggplot(faculty, aes(x = Yrs_Since_PhD, y = Salary)) +
+  geom_point(aes(color = Rank))
+since_rank 
 ```
 
 

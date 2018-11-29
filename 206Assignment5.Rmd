@@ -268,8 +268,6 @@ empmedian_box <- ggplot(emp_median, aes(x = sex, y = salary)) +
         panel.background = element_blank(), axis.line = element_line(colour = "black"),text = element_text(family = "Arial"))+
   xlab("Sex")+
   ylab("Median Salary") +
-  ggtitle("Median Salary by Sex for Employment") +
-  theme(plot.title = element_text(hjust = 0.5)) +
   scale_x_discrete(breaks = c("female","male"), labels = c("Female", "Male"))
   
 empmedian_box
@@ -284,8 +282,6 @@ psmedian_box <- ggplot(ps_median, aes(x = sex, y = salary)) +
         panel.background = element_blank(), axis.line = element_line(colour = "black"),text = element_text(family = "Arial"))+
   xlab("Sex")+
   ylab("Median Salary") +
-  ggtitle("Median Salary by Sex for Postdoctoral Employment") +
-  theme(plot.title = element_text(hjust = 0.5)) +
   scale_x_discrete(breaks = c("female","male"), labels = c("Female", "Male"))
   
 psmedian_box

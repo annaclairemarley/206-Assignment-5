@@ -333,6 +333,7 @@ vif(salary_lm1)
 
 # summarized model
 
+salary_lm2 <- lm(Salary ~ Rank + Yrs_Faculty_Service + Sex + Discipline, data = faculty)
 
 #vif test on lm2
 
@@ -345,6 +346,11 @@ AIC(salary_lm2)
 
 #lm1 has a lower AIC, but our judegement tells us lm2 is probably better 
 
+# third lm with years since phd instead of years of service
+salary_lm3 <- lm(Salary ~ Rank + Yrs_Since_PhD + Sex + Discipline, data = faculty)
+
+###### graphs for testing for interaction between ranks and years of service/ ranks and years since phd
+
 service_rank <- ggplot(faculty, aes(x = Yrs_Faculty_Service, y = Salary)) +
   geom_point(aes(color = Rank))
 
@@ -353,6 +359,13 @@ service_rank
 since_rank <- ggplot(faculty, aes(x = Yrs_Since_PhD, y = Salary)) +
   geom_point(aes(color = Rank))
 since_rank 
+
+# Testing an interaction term for years since phd and rank
+
+salary_lm4 <- lm(Salary ~ Rank + Yrs_Since_PhD + Sex + Discipline + Yrs_Since_PhD*Rank, data = faculty)
+salary_lm4
+
+# This IS NOT an interaction.... scrap this model
 ```
 
 

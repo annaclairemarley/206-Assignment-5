@@ -120,8 +120,7 @@ enroll_lm1 <- lm(Total_M ~ Year, data = grad)
 enroll_lm2 <- lm(Total_F ~ Year, data = grad)
 # Female salary = -58955502 + 30126(Year)
 
-MF_table <- stargazer(enroll_lm1, enroll_lm2, type="html")
-MF_table
+
 
 # check the model diagnostics
 par(mfrow = c(2,2))
@@ -162,6 +161,12 @@ all_enroll_graph
 
 ```
 
+Stargazer
+
+```{r stargazer, results = 'asis'}
+MF_table <- stargazer(enroll_lm1, enroll_lm2, type="html")
+MF_table
+```
 
 
 

@@ -9,6 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(car)
+library(effsize)
 
 
 
@@ -19,6 +20,7 @@ median <- read_csv("Median_salary_cleaned.csv")
 phd_fields <- read_csv("F_PhD_Fields.csv")
 phd_tidy <- read_csv("PhD_tidy.csv")
 phd_chi <-read_csv("Field_chisquared.csv")
+median_box <-read_csv("median_box.csv")
 
 ```
 
@@ -342,19 +344,25 @@ salary_lm2 <- lm(Salary ~ Rank + Yrs_Faculty_Service + Sex + Discipline, data = 
 
 vif(salary_lm2)
 
-#AIC on both models 
+#summarized model with years since phd instead 
+
+salary_lm3 <- lm(Salary ~ Rank + Yrs_Since_PhD + Sex + Discipline, data = faculty)
+
+vif(salary_lm3)
+
+
+#summarzied model with only rank, discipline and sex
+
+salary_lm4 <- lm(Salary ~ Rank + Sex + Discipline, data = faculty)
+
+#AIC on all models 
 
 AIC(salary_lm1)
 AIC(salary_lm2)
+AIC(salary_lm3)
+AIC(salary_lm4)
+
 
 #lm1 has a lower AIC, but our judegement tells us lm2 is probably better 
 
-
-
-
-
-
-
-
-
-
+```

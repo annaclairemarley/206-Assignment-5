@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(car)
 library(effsize)
-
+library(stargazer)
 
 
 faculty <- read_csv("Faculty_salary_data_cleaned.csv")
@@ -118,7 +118,11 @@ Linear Regressions part 1
 enroll_lm1 <- lm(Total_M ~ Year, data = grad)
 # Male Salary = -17112153 + 9069(Year)
 enroll_lm2 <- lm(Total_F ~ Year, data = grad)
-# Female salary = -58955502 + 30126 
+# Female salary = -58955502 + 30126(Year)
+
+MF_table <- stargazer(enroll_lm1, enroll_lm2, type="html")
+MF_table
+
 # check the model diagnostics
 par(mfrow = c(2,2))
   plot(enroll_lm1)
@@ -147,11 +151,12 @@ female_enroll_graph <- ggplot(grad, aes(x = Year, y = Total_F)) +
 female_enroll_graph
 #### Both male and female enrollment linear regressions  ############
 all_enroll_graph <- ggplot(grad, aes(x = Year, y = Total_M)) + 
-  geom_point() +
-  geom_smooth(method = lm, se = TRUE, size = 0.5, color = "gray20") + theme_bw() +
+  geom_point(color = "steelblue4") +
+  geom_smooth(method = lm, se = TRUE, size = 0.5, color = "gray20", fill = "steelblue3") + theme_bw() +
   scale_x_continuous(expand = c(0,0), limits = c(1967, 2015)) +
-  geom_point(data = grad, aes(x =  Year, y = Total_F)) +
-  geom_smooth(data = grad, aes(x =  Year, y = Total_F), method = lm, se = TRUE, size = 0.5, color = "gray20") +    theme_bw() +
+  geom_point(data = grad, aes(x =  Year, y = Total_F), color = "indianred2") +
+  geom_smooth(data = grad, aes(x =  Year, y = Total_F), method = lm, se = TRUE, size = 0.5, color = "gray20", fill =   "lightcoral") +   
+  theme_bw() +
   labs(x = "Year", y = "Enrollment")
 all_enroll_graph
 

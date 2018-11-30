@@ -324,12 +324,13 @@ emp_median <- median_box %>%
   filter(type == "emp")
 
 empmedian_box <- ggplot(emp_median, aes(x = sex, y = salary)) +
-  geom_boxplot()+
+  geom_boxplot(aes(color = sex))+
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.background = element_blank(), axis.line = element_line(colour = "black"),text = element_text(family = "Arial"))+
   xlab("Sex")+
   ylab("Median Salary") +
-  scale_x_discrete(breaks = c("female","male"), labels = c("Female", "Male"))
+  scale_x_discrete(breaks = c("female","male"), labels = c("Female", "Male")) +
+  scale_color_manual(breaks = c("Female", "Male"), values = c("lightcoral", "steelblue3"))
   
 empmedian_box
 
@@ -338,12 +339,13 @@ ps_median <- median_box %>%
   filter(type == "ps")
 
 psmedian_box <- ggplot(ps_median, aes(x = sex, y = salary)) +
-  geom_boxplot()+
+  geom_boxplot(aes(color = sex))+
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.background = element_blank(), axis.line = element_line(colour = "black"),text = element_text(family = "Arial"))+
   xlab("Sex")+
   ylab("Median Salary") +
-  scale_x_discrete(breaks = c("female","male"), labels = c("Female", "Male"))
+  scale_x_discrete(breaks = c("female","male"), labels = c("Female", "Male")) +
+  scale_color_manual(breaks = c("Female", "Male"), values = c("lightcoral", "steelblue3"))
   
 psmedian_box
 ```

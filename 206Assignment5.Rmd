@@ -23,7 +23,7 @@ phd_chi <-read_csv("Field_chisquared.csv")
 ```
 
 
-1. Male and female graduate enrollment (1967 - 2015). Compare trends in total graduate enrollment for males and females (including full-time/part-time and private/public universities) in the United States from 1967 - 2015. Describe your results statistically, graphically and in text.   
+1. Male and female graduate enrollment (1967 - 2015). Compare trends in total graduate enrollment for males and females (including full-time/part-time and private/public universities) in the United States from 1967 - 2015. Describe your results statistically, graphically and in text.   x
 
 **reminder: cannot split public_all/private_All by gender does not equate to gender column**
 

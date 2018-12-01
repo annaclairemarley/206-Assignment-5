@@ -413,6 +413,12 @@ vif(salary_lm3)
 
 salary_lm4 <- lm(Salary ~ Rank + Sex + Discipline, data = faculty)
 
+# really simple model on just rank and discipline
+
+salary_lm5 <- lm(Salary ~ Rank + Discipline, data = faculty)
+plot(salary_lm5)
+summary(salary_lm5)
+
 #AIC on all models 
 
 AIC(salary_lm1)
@@ -467,4 +473,5 @@ inttest_lm2
 
 plot(inttest_lm2)
 summary(inttest_lm2)
+
 ```

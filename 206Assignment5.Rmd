@@ -428,7 +428,7 @@ AIC(salary_lm4)
 # graphs for testing for interaction between ranks and years of service/ ranks and years since phd
 
 service_rank <- ggplot(faculty, aes(x = Yrs_Faculty_Service, y = Salary, color = Rank)) +
-  geom_point() +
+  geom_point(aes(pch = Sex)) +
   geom_smooth(aes(Yrs_Faculty_Service, Salary, color = Rank), method = lm, se = FALSE)
 service_rank
 
@@ -440,7 +440,7 @@ since_rank
 # graph to test interaction between years of service and discipline and years since phd and discipline 
 
 service_discipline <- ggplot(faculty, aes(x = Yrs_Faculty_Service, y = Salary, color = Discipline)) +
-  geom_point() +
+  geom_point(aes(pch = Sex)) +
   geom_smooth(aes(Yrs_Faculty_Service, Salary, color = Discipline), method = lm, se = FALSE)
 service_discipline 
 
@@ -449,5 +449,22 @@ since_discipline <- ggplot(faculty, aes(x = Yrs_Since_PhD, y = Salary, color = D
   geom_smooth(aes(Yrs_Since_PhD, Salary, color = Discipline), method = lm, se = FALSE)
 since_discipline
 
+# experimental models to test interaction terms 
 
+# first model testing interaction between years of service and rank 
+
+inttest_lm1 <- lm(Salary ~ Rank + Yrs_Faculty_Service + Sex + Discipline + Yrs_Faculty_Service*Rank, data = faculty)
+inttest_lm1
+
+plot(inttest_lm1)
+summary(inttest_lm1)
+vif(inttest_lm1)
+
+# second model testing interaction bewtween years of service and discipline 
+
+inttest_lm2 <- lm(Salary ~ Rank + Yrs_Faculty_Service + Sex + Discipline + Yrs_Faculty_Service*Discipline, data = faculty)
+inttest_lm2
+
+plot(inttest_lm2)
+summary(inttest_lm2)
 ```

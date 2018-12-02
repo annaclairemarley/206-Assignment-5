@@ -230,11 +230,12 @@ phdfield_prop
 ```{r}
 # Comparing medians use Mann-Whitney U.
 
-################## Compare median salaries for post-doc positions ################
+################## Compare median salaries for non-postdoc positions ################
 
 # Mann-Whitney U
 emp_mwu <- wilcox.test(median$`Emp M`, median$`Emp F`)
 emp_mwu
+# W =  136.5 p-value = 0.3289 (NOT significant)
 
 # Cliffs Delta (effect size)
 emp_cliff <- cliff.delta(median$`Emp M`, median$`Emp F`)
@@ -250,7 +251,7 @@ emp_male_median - emp_female_median
 # median female = 71750
 # difference male - female = 3417
 
-################### compare median salaries for non-postdoc positions ###############
+################### compare median salaries for postdoc positions ###############
 
 # Explotory histogram - male median salaries 
 # bins
@@ -500,5 +501,6 @@ service_rank_final <- ggplot(faculty, aes(x = Yrs_Faculty_Service, y = Salary, c
                      labels = c("Assistant Professor", "Associate Professor", "Professor")) +
   guides(fill = FALSE)
 service_rank_final
+
 ```
 

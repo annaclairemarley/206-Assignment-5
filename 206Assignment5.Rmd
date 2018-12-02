@@ -474,4 +474,13 @@ inttest_lm2
 plot(inttest_lm2)
 summary(inttest_lm2)
 
+
 ```
+Stargazer tables for #4 Results:
+
+```{r stargazer2, results = 'asis'}
+
+salary_table <- stargazer(salary_lm2, salary_lm3, inttest_lm1, type="html")
+salary_table
+```
+

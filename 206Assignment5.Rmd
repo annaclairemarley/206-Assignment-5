@@ -11,6 +11,7 @@ library(tidyverse)
 library(car)
 library(effsize)
 library(stargazer)
+library(kableExtra)
 
 
 faculty <- read_csv("Faculty_salary_data_cleaned.csv")
@@ -219,8 +220,11 @@ phdfield_prop <- prop.table(as.matrix(phd_chi2), 1) %>%
 
 phdfield_prop
 
+phdfield_prop_table <- kable(phdfield_prop, col.names = c("Physical and Earth Sciences", "Engineering", "Education", "Humanities"), align = "c") %>% 
+  kable_styling(bootstrap_options = "striped", full_width = F)
 
 
+phdfield_prop_table
 
 ```
 

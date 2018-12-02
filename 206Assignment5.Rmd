@@ -484,3 +484,21 @@ salary_table <- stargazer(salary_lm2, salary_lm3, inttest_lm1, type="html")
 salary_table
 ```
 
+Finalized graphs for #4
+```{r}
+# finalized graph for interaction between years of service and rank
+
+service_rank_final <- ggplot(faculty, aes(x = Yrs_Faculty_Service, y = Salary, color = Rank)) +
+  geom_point(aes(fill = Rank)) +
+  geom_smooth(aes(Yrs_Faculty_Service, Salary, color = Rank), method = lm, se = FALSE) +
+  scale_y_continuous(expand = c(0,0), limits = c(50000,300000)) +
+  scale_x_continuous(expand = c(0,0), limits = c(-0.5,61), breaks = seq(0,60,by = 10)) +
+  theme_classic() +
+  labs(x = "Years of Faculty Service", y = "Salary (US Dollars)") + 
+  scale_color_manual(breaks = c("AsstProf", "AssocProf", "Prof"),
+                     values = c( "dodgerblue3","darkgoldenrod2", "tomato1"),
+                     labels = c("Assistant Professor", "Associate Professor", "Professor")) +
+  guides(fill = FALSE)
+service_rank_final
+```
+

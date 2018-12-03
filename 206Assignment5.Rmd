@@ -460,9 +460,9 @@ plot(inttest_lm1)
 summary(inttest_lm1)
 vif(inttest_lm1)
 
-# second model testing interaction bewtween years of service and discipline 
+# second model testing interaction bewtween years since phd and discipline 
 
-inttest_lm2 <- lm(Salary ~ Rank + Yrs_Faculty_Service + Sex + Discipline + Yrs_Faculty_Service*Discipline, data = faculty)
+inttest_lm2 <- lm(Salary ~ Rank + Yrs_Since_PhD + Sex + Discipline + Yrs_Since_PhD*Discipline, data = faculty)
 inttest_lm2
 
 plot(inttest_lm2)

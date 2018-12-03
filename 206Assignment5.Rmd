@@ -197,12 +197,17 @@ phd_shifts
 #Ho - there is no association between year and number of women in each field 
 #Ha - there IS an association between year and number of women in each field 
 
-
 phd_chi2 <- phd_chi %>% 
   select(-Year) %>%
   filter(physical != "NA")
 
 row.names(phd_chi2) <- c("1985","2000","2015")
+
+#Another table with counts: 
+  
+
+phd_chi3 <- phd_chi2 %>% 
+  mutate(rowSums(phd_chi2))
 
 #Perform chi-square 
 

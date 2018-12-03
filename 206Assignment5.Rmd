@@ -192,6 +192,23 @@ phd_shifts <- phd_tidy %>%
 
 phd_shifts
 
+#stacked graph 
+
+phd_shifts_stacked <- phd_tidy %>% 
+  filter(Field == "Physical science" | Field == "Engineering" | Field == "Education" | Field == "Humanities", Sex    == "F") %>% 
+  ggplot(aes(x = Year, y = Number , fill = Field))+
+  geom_bar(stat = "identity") +
+  scale_x_continuous(expand=c(0,0), breaks = seq(1985,2015, by=15)) +
+  scale_y_continuous(expand=c(0,0)) +
+  theme_classic() +
+  labs(
+    x = "Year",
+    y = "Female PhDs Awarded"
+  )+
+  scale_fill_manual(breaks = c("Education", "Engineering", "Humanities", "Physical science"), values = c("chartreuse4","dodgerblue3","darkgoldenrod2","tomato1"))
+
+phd_shifts_stacked
+
 #chi squared test on female "is there a sigificant difference in females receiving doctoral degrees in each field in 1985, 2000 and 2015?"
 
 #Ho - there is no association between year and number of women in each field 

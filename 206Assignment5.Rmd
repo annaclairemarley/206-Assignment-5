@@ -232,28 +232,20 @@ phdfield_prop_table
 3. Male and female salaries for starting postdoctoral and other employment positions (2015). Compare median salaries for male and female doctorate recipients in 2015. Answer these two questions: Does median salary differ significantly between male and female starting postdoc positions? Does median salary differ significantly between male and female PhD recipients in non-postdoc employment positions?
 
 ```{r}
-# Comparing medians use Mann-Whitney U.
+# Comparing medians use Wilcoxon signed-rank for paired data
 
 ################## Compare median salaries for non-postdoc positions ################
 
 # Mann-Whitney U
-emp_mwu <- wilcox.test(median$`Emp M`, median$`Emp F`)
+emp_mwu <- wilcox.test(median$`Emp M`, median$`Emp F`, paired = TRUE)
 emp_mwu
-# W =  136.5 p-value = 0.3289 (NOT significant)
+# V =  101 p-value = 0.002572 (SIGNIFICANT)
 
 # Cliffs Delta (effect size)
 emp_cliff <- cliff.delta(median$`Emp M`, median$`Emp F`)
 emp_cliff
 # Cliff delta = 0.2133 (small)
 
-# Actual difference in medians 
-
-emp_male_median <- median(median$`Emp M`)
-emp_female_median <- median(median$`Emp F`)
-emp_male_median - emp_female_median
-# median male = 75167
-# median female = 71750
-# difference male - female = 3417
 
 ################### compare median salaries for postdoc positions ###############
 
@@ -299,15 +291,15 @@ psfemale_qq
 
 # overall relatively normal
 
-# Mann-Whitney U
+# Wilcoxon signed-rank
 
 # HO: Ranks are equal (medians are equal)
 # HA: Ranks are NOT equal
 
-ps_mwu <- wilcox.test(median$`PS M`, median$`PS F`)
+ps_mwu <- wilcox.test(median$`PS M`, median$`PS F`, paired = TRUE)
 ps_mwu
 
-# W = 117 p-value = 0.8671 (NOT significant)
+# V = 19.5 p-value = 0.8884 (NOT significant)
 
 # Cliffs Delta (effect size)
 
@@ -315,14 +307,6 @@ ps_cliff <- cliff.delta(median$`PS M`, median$`PS F`)
 ps_cliff
 # Cliff delta = 0.04 (negligible)
 
-# Actual difference in medians 
-
-ps_male_median <- median(median$`PS M`)
-ps_female_median <- median(median$`PS F`)
-ps_male_median - ps_female_median
-# median male = 48000
-# median female = 45000
-# difference male - female = 3000
 
 ############################# Box & Whisker plot Emp #################################
 emp_median <- median_box %>% 

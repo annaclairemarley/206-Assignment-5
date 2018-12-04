@@ -22,6 +22,7 @@ phd_fields <- read_csv("F_PhD_Fields.csv")
 phd_tidy <- read_csv("PhD_tidy.csv")
 phd_chi <-read_csv("Field_chisquared.csv")
 median_box <-read_csv("median_box.csv")
+median_tidy <- read_csv("median_salaries_tidy.csv")
 
 ```
 
@@ -359,6 +360,22 @@ psmedian_box <- ggplot(ps_median, aes(x = sex, y = salary)) +
   scale_color_manual(breaks = c("Female", "Male"), values = c("lightcoral", "steelblue3"))
   
 psmedian_box
+
+######################### bar graph non-postdoc employment ###############
+emp_median_bar <- median_tidy %>% 
+  filter (type == "emp")
+
+emp_col <- ggplot(emp_median_bar, aes(x = field, y = salary, fill = sex)) +
+  geom_col(aes(fill = sex), position = "dodge") +
+  scale_y_continuous(expand = c(0,0), limits = c(0,125000)) + 
+  labs(y = "Salary (USD)", x = "Field of Study") +
+  theme_classic() + 
+  scale_fill_manual(breaks = c("f", "m"),
+                     values = c("lightcoral", "steelblue3"),
+                     labels = c("Female", "Male")) +
+  theme(axis.text.x = element_text(angle = 65, hjust = 1))
+  
+emp_col
 ```
 
 

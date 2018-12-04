@@ -244,7 +244,8 @@ phdfield_prop <- prop.table(as.matrix(phd_chi2), 1) %>%
 phdfield_prop
 
 phdfield_prop_table <- kable(phdfield_prop, col.names = c("Physical and Earth Sciences", "Engineering", "Education", "Humanities"), align = "c") %>% 
-  kable_styling(bootstrap_options = "striped", full_width = F)
+  kable_styling(bootstrap_options = "striped", full_width = F) %>% 
+  column_spec(1, bold = T)
 
 
 phdfield_prop_table

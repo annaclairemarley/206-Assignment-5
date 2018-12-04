@@ -519,13 +519,24 @@ inttest_lm2
 plot(inttest_lm2)
 summary(inttest_lm2)
 
+# FINAL MODELS:
+# first model only include years of faculty service, sex, discipline
+salary_lm6 <- lm(Salary ~ Yrs_Faculty_Service + Sex + Discipline, data = faculty)
+plot(salary_lm6)
+vif(salary_lm6)
+summary(salary_lm6)
 
+# second model only include rank, sex, discipline
+salary_lm7 <- lm(Salary ~ Rank + Sex + Discipline, data = faculty)
+plot(salary_lm7)
+vif(salary_lm7)
+summary(salary_lm7)
 ```
 Stargazer tables for #4 Results:
 
 ```{r stargazer2, results = 'asis'}
 
-salary_table <- stargazer(salary_lm2, salary_lm3, inttest_lm1, type="html")
+salary_table <- stargazer(salary_lm6, salary_lm7, type="html")
 salary_table
 ```
 

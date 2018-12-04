@@ -1,0 +1,61 @@
+﻿field,salary,sex,type
+Agricultural sciences and natural resources,"42,750",m,ps
+Biological and biomedical sciences,"42,000",m,ps
+Health sciences,"43,000",m,ps
+Chemistry,"42,000",m,ps
+"Geosciences, atmospheric, and ocean sciences","50,000",m,ps
+Physics and astronomy,"50,000",m,ps
+Mathematics and computer sciences,"58,000",m,ps
+Psychology,"42,000",m,ps
+Economics,"65,000",m,ps
+Social sciences,"48,000",m,ps
+Engineering,"45,000",m,ps
+Education,"50,000",m,ps
+Humanities and arts,"45,000",m,ps
+Business management and administration,"60,000",m,ps
+Other non-S&E fields,"50,000",m,ps
+Agricultural sciences and natural resources,"78,000",m,emp
+Biological and biomedical sciences,"75,000",m,emp
+Health sciences,"75,000",m,emp
+Chemistry,"80,000",m,emp
+"Geosciences, atmospheric, and ocean sciences","75,167",m,emp
+Physics and astronomy,"95,000",m,emp
+Mathematics and computer sciences,"105,000",m,emp
+Psychology,"63,000",m,emp
+Economics,"105,000",m,emp
+Social sciences,"64,000",m,emp
+Engineering,"95,000",m,emp
+Education,"71,000",m,emp
+Humanities and arts,"52,000",m,emp
+Business management and administration,"123,500",m,emp
+Other non-S&E fields,"62,800",m,emp
+Agricultural sciences and natural resources,"44,000",f,ps
+Biological and biomedical sciences,"42,000",f,ps
+Health sciences,"43,250",f,ps
+Chemistry,"42,000",f,ps
+"Geosciences, atmospheric, and ocean sciences","50,000",f,ps
+Physics and astronomy,"53,000",f,ps
+Mathematics and computer sciences,"55,000",f,ps
+Psychology,"42,000",f,ps
+Economics,"65,000",f,ps
+Social sciences,"49,250",f,ps
+Engineering,"45,000",f,ps
+Education,"45,000",f,ps
+Humanities and arts,"45,000",f,ps
+Business management and administration,"63,500",f,ps
+Other non-S&E fields,"44,000",f,ps
+Agricultural sciences and natural resources,"66,000",f,emp
+Biological and biomedical sciences,"66,000",f,emp
+Health sciences,"75,000",f,emp
+Chemistry,"75,000",f,emp
+"Geosciences, atmospheric, and ocean sciences","71,750",f,emp
+Physics and astronomy,"97,650",f,emp
+Mathematics and computer sciences,"90,000",f,emp
+Psychology,"60,000",f,emp
+Economics,"95,750",f,emp
+Social sciences,"62,000",f,emp
+Engineering,"90,000",f,emp
+Education,"63,000",f,emp
+Humanities and arts,"50,000",f,emp
+Business management and administration,"120,000",f,emp
+Other non-S&E fields,"61,000",f,emp

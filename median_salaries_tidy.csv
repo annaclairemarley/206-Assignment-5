@@ -1,0 +1,61 @@
+﻿field,salary,sex,type
+Agricultural Sciences & Natural Resources,"42,750",m,ps
+Biological & Biomedical Sciences,"42,000",m,ps
+Health Sciences,"43,000",m,ps
+Chemistry,"42,000",m,ps
+"Geosciences, Atmospheric, & Ocean Sciences","50,000",m,ps
+Physics & Astronomy,"50,000",m,ps
+Mathematics & Computer Sciences,"58,000",m,ps
+Psychology,"42,000",m,ps
+Economics,"65,000",m,ps
+Social Sciences,"48,000",m,ps
+Engineering,"45,000",m,ps
+Education,"50,000",m,ps
+Humanities & Arts,"45,000",m,ps
+Business Management & Administration,"60,000",m,ps
+Other non-S&E Fields,"50,000",m,ps
+Agricultural Sciences & Natural Resources,"78,000",m,emp
+Biological & Biomedical Sciences,"75,000",m,emp
+Health Sciences,"75,000",m,emp
+Chemistry,"80,000",m,emp
+"Geosciences, Atmospheric, & Ocean Sciences","75,167",m,emp
+Physics & Astronomy,"95,000",m,emp
+Mathematics & Computer Sciences,"105,000",m,emp
+Psychology,"63,000",m,emp
+Economics,"105,000",m,emp
+Social Sciences,"64,000",m,emp
+Engineering,"95,000",m,emp
+Education,"71,000",m,emp
+Humanities & Arts,"52,000",m,emp
+Business Management & Administration,"123,500",m,emp
+Other non-S&E Fields,"62,800",m,emp
+Agricultural Sciences & Natural Resources,"44,000",f,ps
+Biological & Biomedical Sciences,"42,000",f,ps
+Health Sciences,"43,250",f,ps
+Chemistry,"42,000",f,ps
+"Geosciences, Atmospheric, & Ocean Sciences","50,000",f,ps
+Physics & Astronomy,"53,000",f,ps
+Mathematics & Computer Sciences,"55,000",f,ps
+Psychology,"42,000",f,ps
+Economics,"65,000",f,ps
+Social Sciences,"49,250",f,ps
+Engineering,"45,000",f,ps
+Education,"45,000",f,ps
+Humanities & Arts,"45,000",f,ps
+Business Management & Administration,"63,500",f,ps
+Other non-S&E Fields,"44,000",f,ps
+Agricultural Sciences & Natural Resources,"66,000",f,emp
+Biological & Biomedical Sciences,"66,000",f,emp
+Health Sciences,"75,000",f,emp
+Chemistry,"75,000",f,emp
+"Geosciences, Atmospheric, & Ocean Sciences","71,750",f,emp
+Physics & Astronomy,"97,650",f,emp
+Mathematics & Computer Sciences,"90,000",f,emp
+Psychology,"60,000",f,emp
+Economics,"95,750",f,emp
+Social Sciences,"62,000",f,emp
+Engineering,"90,000",f,emp
+Education,"63,000",f,emp
+Humanities & Arts,"50,000",f,emp
+Business Management & Administration,"120,000",f,emp
+Other non-S&E Fields,"61,000",f,emp

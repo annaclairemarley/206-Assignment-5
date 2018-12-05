@@ -450,7 +450,7 @@ vif(salary_lm2)
 #summarized model with years since phd instead 
 
 salary_lm3 <- lm(Salary ~ Rank + Yrs_Since_PhD + Sex + Discipline, data = faculty)
-
+summary(salary_lm3)
 vif(salary_lm3)
 
 

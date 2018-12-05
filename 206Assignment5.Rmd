@@ -206,7 +206,7 @@ phd_shifts_stacked <- phd_tidy %>%
     x = "Year",
     y = "Female PhDs Awarded"
   )+
-  scale_fill_manual(breaks = c("Education", "Engineering", "Humanities", "Physical science"), values = c("chartreuse4","dodgerblue3","darkgoldenrod2","tomato1"))
+  scale_fill_manual(breaks = c("Education", "Engineering", "Humanities", "Physical science"), values = c("steelblue2", "forestgreen","lightgoldenrod1","orange1"))
 
 phd_shifts_stacked
 
